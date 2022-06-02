@@ -1,9 +1,27 @@
 def jogar():
+    import random
+
     print("****************************")
     print("Bem vindo ao jogo da Forca")
-    print("****************************")
+    print("****************************\n")
 
-    palavra_secreta = "manga".upper()
+
+    print("Adivinhe a Fruta\n")
+
+    #pegando as frutas dentro de palavras
+    arquivo = open(r"C:\Users\vinic\Documents\MeusProjetos\Jogo-em-Python\jogo\palavras.txt","r")
+    palavras = []
+    
+    for linha in arquivo:
+        linha = linha.strip()
+        palavras.append(linha)
+    arquivo.close()
+    
+    #add aleatoriedade na chamada
+    numero = random.randrange(0,len(palavras))
+    palavra_secreta = palavras[numero].upper()
+
+    #add "_" para cada caracter da fruta
     letras_acertadas = ["_" for letra in palavra_secreta]
     
     enforcou = False
@@ -12,6 +30,7 @@ def jogar():
 
     print(letras_acertadas)
     
+    #Loop de tentativa
     while(not enforcou and not acertou):
 
         chute = input("Qual letra?")
