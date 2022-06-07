@@ -97,6 +97,7 @@ def jogar():
     arquivo = open(r"C:\Users\vinic\Documents\MeusProjetos\Jogo-em-Python\jogo\palavras.txt","r")
     palavras = []
     
+    #le oque tem em cada linha
     for linha in arquivo:
         linha = linha.strip()
         palavras.append(linha)
@@ -123,7 +124,7 @@ def jogar():
             chute = chute.strip().upper()
             
             if(chute in palavra_secreta):
-    
+                #posição das letras
                 index = 0
                 for letra in palavra_secreta:
                     if(chute == letra):
