@@ -7,7 +7,6 @@ def jogar():
 
 
     numero_secreto = random.randrange(1,11)
-    total_de_tentativas = 0
     rodada = 1
     pontos = 10
 
